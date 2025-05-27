@@ -13,6 +13,7 @@
   "dependencies": {
     "@auth/core": "^0.12.0",
     "@auth/drizzle-adapter": "^0.3.2",
+    "@googlemaps/react-wrapper": "^1.2.0",
     "@radix-ui/react-slot": "^1.0.2",
     "@supabase/ssr": "^0.6.1",
     "@supabase/supabase-js": "^2.49.8",
@@ -22,6 +23,7 @@
     "@trpc/next": "10.38.0",
     "@trpc/react-query": "^10.38.0",
     "@trpc/server": "^10.38.0",
+    "@types/google.maps": "^3.58.1",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
     "drizzle-orm": "^0.28.5",

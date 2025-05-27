@@ -4,6 +4,7 @@ import Link from "next/link";
 
 import { LoginButton } from "@/components/auth/login-button";
 import { LogoutButton } from "@/components/auth/logout-button";
+import PropertyMap from "@/components/map/property-map";
 import { useAuth } from "@/lib/hooks/use-auth";
 
 export default function Home() {
@@ -77,6 +78,13 @@ export default function Home() {
             </div>
           )}
         </div>
+
+        {/* Map Section */}
+        {user && (
+          <div className="w-full max-w-6xl">
+            <PropertyMap />
+          </div>
+        )}
       </div>
     </main>
   );
