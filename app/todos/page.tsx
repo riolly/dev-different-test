@@ -13,9 +13,9 @@ export default function TodosPage() {
 
   if (loading) {
     return (
-      <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-br from-indigo-800 to-indigo-950">
+      <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-br from-gray-900 via-black to-gray-800">
         <div className="container flex flex-col items-center justify-center gap-8 px-4 py-16">
-          <div className="rounded-xl bg-white/10 p-8 text-center text-white">
+          <div className="rounded-xl border border-white/10 bg-white/5 p-8 text-center text-white backdrop-blur-sm">
             <p>Loading...</p>
           </div>
         </div>
@@ -25,16 +25,16 @@ export default function TodosPage() {
 
   if (!user) {
     return (
-      <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-br from-indigo-800 to-indigo-950">
+      <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-br from-gray-900 via-black to-gray-800">
         <div className="container flex flex-col items-center justify-center gap-8 px-4 py-16">
-          <div className="rounded-xl bg-white/10 p-8 text-center text-white">
+          <div className="rounded-xl border border-white/20 bg-white/10 p-8 text-center text-white backdrop-blur-md">
             <h1 className="mb-4 text-2xl font-bold">Sign In Required</h1>
             <p className="mb-6">You need to be logged in to view your todos.</p>
             <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
-              <LoginButton className="bg-blue-600 text-white hover:bg-blue-700" />
+              <LoginButton className="bg-white font-semibold text-black hover:bg-gray-100" />
               <Link
                 href="/"
-                className="inline-flex items-center justify-center gap-2 rounded-lg bg-white/10 px-4 py-2 text-white transition-colors hover:bg-white/20"
+                className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/20 bg-white/10 px-4 py-2 text-white backdrop-blur-sm transition-all duration-200 hover:border-white/30 hover:bg-white/20"
               >
                 <ArrowLeft className="h-4 w-4" />
                 Back to Home
@@ -47,13 +47,13 @@ export default function TodosPage() {
   }
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-indigo-800 to-indigo-950 py-8">
+    <main className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-800 py-8">
       <div className="container mx-auto px-4">
-        <div className="mb-6 flex items-center justify-between">
+        <div className="mb-8 flex items-center justify-between">
           <div className="flex items-center gap-4">
             <Link
               href="/"
-              className="inline-flex items-center gap-2 rounded-lg bg-white/10 px-4 py-2 text-white transition-colors hover:bg-white/20"
+              className="inline-flex items-center gap-2 rounded-lg border border-white/20 bg-white/10 px-4 py-2 text-white backdrop-blur-sm transition-all duration-200 hover:border-white/30 hover:bg-white/20"
             >
               <ArrowLeft className="h-4 w-4" />
               Back to Home
@@ -63,12 +63,12 @@ export default function TodosPage() {
           <LogoutButton
             variant="destructive"
             size="sm"
-            className="border-red-600 bg-red-600 text-white hover:border-red-700 hover:bg-red-700"
+            className="border-red-500/50 bg-red-500/20 text-red-300 hover:border-red-400 hover:bg-red-500/30"
           />
         </div>
 
         <div className="flex justify-center">
-          <div className="w-full max-w-2xl rounded-xl bg-white p-6 shadow-lg">
+          <div className="w-full max-w-2xl rounded-2xl border border-white/20 bg-white/10 p-8 shadow-2xl backdrop-blur-md">
             <UserTodos />
           </div>
         </div>

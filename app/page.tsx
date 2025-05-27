@@ -10,19 +10,19 @@ export default function Home() {
   const { user, loading } = useAuth();
 
   return (
-    <main className=" flex min-h-screen flex-col items-center justify-center bg-gradient-to-br from-indigo-800 to-indigo-950">
-      <div className="container flex flex-col items-center justify-center gap-12 px-4 py-16 ">
+    <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-br from-gray-900 via-black to-gray-800">
+      <div className="container flex flex-col items-center justify-center gap-12 px-4 py-16">
         <h1 className="text-5xl font-extrabold tracking-tight text-white sm:text-[5rem]">
           AirEstate
         </h1>
 
         <div className="flex flex-col items-center gap-4">
           {loading ? (
-            <div className="rounded-xl bg-white/10 p-6 text-center text-white">
+            <div className="rounded-xl border border-white/10 bg-white/5 p-6 text-center text-white backdrop-blur-sm">
               <p>Loading authentication...</p>
             </div>
           ) : user ? (
-            <div className="flex flex-col items-center gap-4 rounded-xl bg-white/10 p-6 text-white">
+            <div className="flex flex-col items-center gap-4 rounded-xl border border-white/20 bg-white/10 p-6 text-white backdrop-blur-md">
               <div className="flex flex-col items-center gap-2">
                 <h3 className="text-xl font-bold text-green-300">
                   ✅ Login Successful!
@@ -52,26 +52,26 @@ export default function Home() {
               <div className="flex flex-col items-center gap-2">
                 <Link
                   href="/todos"
-                  className="rounded-lg bg-blue-600 px-4 py-2 text-white transition-colors hover:bg-blue-700"
+                  className="rounded-lg bg-white px-4 py-2 font-semibold text-black transition-all duration-200 hover:bg-gray-100"
                 >
                   View My Todos
                 </Link>
                 <LogoutButton
                   variant="destructive"
-                  className="border-red-600 bg-red-600 text-white hover:border-red-700 hover:bg-red-700"
+                  className="border-red-500/50 bg-red-500/20 text-red-300 hover:border-red-400 hover:bg-red-500/30"
                 />
               </div>
             </div>
           ) : (
             <div className="flex flex-col items-center gap-4">
-              <div className="rounded-xl bg-white/10 p-6 text-center text-white">
+              <div className="rounded-xl border border-white/20 bg-white/10 p-6 text-center text-white backdrop-blur-md">
                 <h3 className="mb-2 text-xl font-bold">Welcome to AirEstate</h3>
                 <p className="mb-4 text-white/80">
                   Sign in to access your account and manage your properties
                 </p>
                 <LoginButton
                   size="lg"
-                  className="bg-blue-600 text-white hover:bg-blue-700"
+                  className="bg-white font-semibold text-black hover:bg-gray-100"
                 />
               </div>
             </div>

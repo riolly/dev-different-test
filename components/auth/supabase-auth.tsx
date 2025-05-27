@@ -3,6 +3,7 @@
 import { useState } from "react";
 
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { createClient } from "@/lib/supabase/client";
 
 export const MagicLinkAuth = () => {
@@ -43,36 +44,49 @@ export const MagicLinkAuth = () => {
   };
 
   return (
-    <div className="mx-auto flex max-w-md flex-col gap-4 p-6">
+    <div className="flex flex-col gap-6">
       <form
         onSubmit={(e) => void handleSignIn(e)}
-        className="flex flex-col gap-4"
+        className="flex flex-col gap-6"
       >
-        <div>
-          <label htmlFor="email" className="mb-2 block text-sm font-medium">
+        <div className="space-y-2">
+          <label
+            htmlFor="email"
+            className="block text-sm font-semibold text-white"
+          >
             Email Address
           </label>
-          <input
+          <Input
             id="email"
             type="email"
+            variant="dark"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            placeholder="Enter your email"
-            className="w-full rounded-md border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-800"
+            placeholder="Enter your email address"
             disabled={loading}
           />
         </div>
 
-        <Button type="submit" disabled={loading}>
+        <Button
+          type="submit"
+          disabled={loading}
+          className="w-full rounded-lg bg-white px-6 py-3 text-base font-semibold text-black transition-all duration-200 hover:bg-gray-100 focus:ring-2 focus:ring-white/50 disabled:opacity-50"
+        >
           {loading ? "Sending..." : "Send Magic Link"}
         </Button>
 
         {message && (
-          <p
-            className={`text-sm ${message.includes("error") || message.includes("Please") ? "text-red-600" : "text-green-600"}`}
-          >
-            {message}
-          </p>
+          <div className="rounded-lg border border-white/20 bg-white/10 p-3 backdrop-blur-sm">
+            <p
+              className={`text-sm font-medium ${
+                message.includes("error") || message.includes("Please")
+                  ? "text-red-300"
+                  : "text-green-300"
+              }`}
+            >
+              {message}
+            </p>
+          </div>
         )}
       </form>
     </div>
