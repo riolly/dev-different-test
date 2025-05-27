@@ -4,6 +4,7 @@ import { useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { env } from "@/env.mjs";
 import { createClient } from "@/lib/supabase/client";
 
 export const MagicLinkAuth = () => {
@@ -27,7 +28,7 @@ export const MagicLinkAuth = () => {
       const { error } = await supabase.auth.signInWithOtp({
         email,
         options: {
-          emailRedirectTo: `${process.env.NEXT_PUBLIC_VERCEL_URL}/auth/callback`,
+          emailRedirectTo: env.NEXT_PUBLIC_AUTH_REDIRECT_URL,
         },
       });
 
